@@ -334,5 +334,5 @@ st.markdown("""
 st.sidebar.markdown("---")
 st.sidebar.markdown("""
 ### Resources
-- [Project GitHub](#)
+- [Project GitHub](https://github.com/martasolerebri/heart-disease-prediction.git)
 """)
