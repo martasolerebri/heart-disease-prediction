@@ -476,10 +476,9 @@ We compared Logistic Regression against several algorithms using **5-fold Strati
 | Model | Best CV Score |
 |:---|:---:|
 | **Logistic Regression (C=0.1)** | **0.541003** | 
-| Gradient Boosting | 0.538188 | 
 | Random Forest | 0.538188 | 
-| SVM (RBF) | 0.532774 | 
-| SVM (Linear) | 0.532774 | 
+| Gradient Boosting | 0.532774 | 
+| SVM | 0.528693 |
 
 </div>
 
