@@ -559,6 +559,7 @@ Forces model to learn only robust patterns
 ```
 
 **2. High Dimensionality (40+ features)**
+
 $$
 \text{Overfitting Risk} \propto \frac{\text{Features}}{\text{Samples}} = \frac{40}{732} \approx 0.055
 $$
