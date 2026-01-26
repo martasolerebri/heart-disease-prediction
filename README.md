@@ -1,6 +1,6 @@
 # Heart Disease Prediction
 
-Predicting cardiovascular disease severity using clinical data: a complete data science pipeline from raw data to deployed web application.
+> Predicting cardiovascular disease severity using clinical data: a complete data science pipeline from raw data to deployed web application. Live demo at: [heart-disease-prediction](https://heart-disease-prediction-mse2421.streamlit.app/)
 
 ---
 
