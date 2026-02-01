@@ -8,8 +8,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# Streamlit uses port 8501
-EXPOSE 8501
-
-# Command to run the web app
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["python", "main.py"]

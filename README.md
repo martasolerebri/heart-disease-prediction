@@ -1,6 +1,6 @@
 # Heart Disease Prediction
 
-> Predicting cardiovascular disease severity using clinical data: a complete data science pipeline from raw data to deployed web application. Live demo at: [heart-disease-prediction](https://heart-disease-prediction-mse2421.streamlit.app/)
+> Predicting cardiovascular disease severity using clinical data: a complete data science pipeline for model training and evaluation.
 
 ---
 
@@ -12,8 +12,7 @@
 4. [Feature Engineering](#4-feature-engineering)
 5. [Model Comparison & Selection](#5-model-comparison--selection)
 6. [Final Model & Implementation Pipeline](#6-final-model--implementation-pipeline)
-7. [Web Application](#7-web-application)
-8. [Dockerization & Deployment](#8-dockerization--deployment)
+7. [Docker Setup](#7-docker-setup)
 
 ---
 
@@ -64,7 +63,6 @@ heart-disease-prediction/
 │   └── plots.py                          # Visualization utilities
 │
 ├── main.py                               # Training pipeline
-├── app.py                                # Streamlit web design
 ├── requirements.txt                      # Python dependencies
 ├── Dockerfile                            # Container configuration
 └── README.md                             # Project documentation
@@ -693,53 +691,27 @@ python main.py
 
 ---
 
-## 7. Web Application
+## 7. Docker Setup
 
-### 7.1 Streamlit Interface
-
-An interactive web application for real-time heart disease risk assessment.
-
----
-
-### 7.2 App Features
-
-#### Patient Data Entry
-Sidebar collects comprehensive patient information:
-- **Demographics**: Age, sex
-- **Symptoms**: Chest pain type, exercise-induced angina
-- **Vital Signs**: Blood pressure, cholesterol, fasting blood sugar
-- **Cardiac Tests**: ECG results, heart rate, ST depression
-- **Advanced Tests**: Fluoroscopy results, thalassemia
-
-#### Risk Assessment
-Click "**Analyze Risk**" to get:
-- **Risk Classification**: Low Risk (green) or Elevated Risk (red)
-- **Confidence Score**: Percentage confidence
-- **Severity Level**: For positive cases (1-4 scale)
-- **Probability Distribution**: Bar chart across all classes
-- **Top Risk Factors**: Features contributing most to prediction
-
----
-
-## 8. Dockerization & Deployment
-
-### 8.1 Docker Configuration
-
-#### Build Image
+### 7.1 Build and Run
 ```bash
-docker build -t heart-disease-app .
+docker build -t heart-disease-trainer .
 ```
 
 #### Run Container
 ```bash
-docker run -p 8501:8501 \
-  -v "$(pwd)/models:/app/models" \
+docker run -v "$(pwd)/models:/app/models" \
   -v "$(pwd)/data:/app/data" \
-  heart-disease-app
+  heart-disease-trainer
 ```
 
-#### Access
-Navigate to: `http://localhost:8501`
+This will:
+
+1. Load the training and test data
+2. Apply the complete preprocessing pipeline
+3. Train the logistic regression model
+4. Save the trained model, scaler, and feature list to `models/`
+5. Generate predictions in `data/processed/submission.csv`
 
 ---
 
@@ -769,7 +741,7 @@ Navigate to: `http://localhost:8501`
 
 ## Author
 
-**Marta Soler Ebri** - Master's Degree Project - [GitHub](https://github.com/martasolerebri)
+[Marta Soler Ebri](https://github.com/martasolerebri) - Master's Degree Project 
 
 ---
 
