@@ -28,7 +28,7 @@ The implementation follows the following pipeline:
 2. **Imputation:** Comparing Median/Mode, KNN, and MICE (Iterative) strategies to impute missing values.
 3. **Feature Engineering:** Creating domain-specific indicators.
 4. **Model Implementation:** Implementing a training pipeline.
-5. **Deployment:** Developing a **Streamlit** web application wrapped in a **Docker** container for platform-independent execution.
+5. **Deployment:** Dockerization of the project for a quick setup.
 
 > A Note on Evaluation Metrics: Accuracy was the primary Kaggle leaderboard metric. However, due to the unbalanced classes inherent in heart disease severity stages, this project emphasizes that Accuracy can be misleading. In a clinical setting, F1-Score or Recall would be the priority to minimize false negatives.
 
